@@ -1,11 +1,10 @@
 export const generateArray = () => {
-    const array = [];
-    for (let i = 0; i < 18; i++) {
-      const randomValue = Math.floor(Math.random() * 9) + 1; // Generates a random number from 1 to 9
-      const randomSign = Math.random() < 0.5 ? -1 : 1; // Randomly determines the sign (+ or -)
-      array.push(randomValue * randomSign);
-    }
-    return array;
+  const arr = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // Random index from 0 to i
+    [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap elements
+  }
+    return arr;
   };
 
 export const chooseKey = (numbers) => {
@@ -18,6 +17,10 @@ export const chooseKey = (numbers) => {
 
   return { randomPositive, randomNegative };
 };
+
+export const invertNumber=(num)=> {
+  return -num; 
+}
 
   
 

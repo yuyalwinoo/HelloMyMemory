@@ -10,11 +10,15 @@ import {
 import { useState } from "react"
   
 
-const ShowAlert = ({title,discription,goToStart}) => {
+const ShowAlert = ({title,discription,goToStart,onClickShowAnswerHandler}) => {
     const [open,setOpen] = useState(true);
     const onClickHandler = ()=>{
         setOpen(false);
         goToStart();
+    }
+    const showAnswerHandler = ()=>{
+      setOpen(false);
+      onClickShowAnswerHandler();
     }
   return (
     <AlertDialog open={open} >
@@ -29,6 +33,10 @@ const ShowAlert = ({title,discription,goToStart}) => {
           <AlertDialogAction 
               onClick={onClickHandler}>
               OK
+          </AlertDialogAction>
+          <AlertDialogAction 
+              onClick={showAnswerHandler}>
+              Show Answer
           </AlertDialogAction>
           </AlertDialogFooter>
       </AlertDialogContent>

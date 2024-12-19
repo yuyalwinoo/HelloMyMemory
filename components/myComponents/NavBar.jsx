@@ -2,30 +2,27 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import ShiftingUnderline from './ShiftingUnderline';
 
 const NavBar = () => {
     const pathname = usePathname();
     return (
-        <nav className='bg-primary p-5 flex justify-between'>
-            <Link className={`link ${pathname === '/' ? 'active' : ''} text-2xl`} href="/">
+        <nav className='p-5 flex justify-between'>
+            <Link className={`link text-3xl`} href="/">
                 HELLO MY MRMOEY
             </Link>
 
             <div className='flex justify-center space-x-10'>
-                <Link
-                    className={`link ${pathname === '/games' ? 'active' : ''}`}
-                    href="/games"
-                >
-                    Games
-                </Link>
-                <Link
-                    className={`link ${pathname === '/profile' ? 'active' : ''}`}
-                    href="/about"
-                >
-                    Profile
-                </Link>
+
+                <ShiftingUnderline  checkpathname = {"/games"}
+                                    href="/games"
+                                    name="Games"/>
+                <ShiftingUnderline  checkpathname = {"/profile"}
+                                    href="/profile"
+                                    name="Profile"/>
             </div>
         </nav>
+       
     )
 }
 

@@ -5,8 +5,8 @@ import { Gamepad2 } from "lucide-react";
 const GameItem = ({game})=>{
 	return(
 		<Link href={game.link} className="flex flex-col items-center gap-y-3 bg-primary rounded-md p-4 text-center hover-animate">
-			<Gamepad2 />
-			<p>{game.title}</p>
+			<Gamepad2 className="text-secondary"/>
+			<p className="text-secondary">{game.title}</p>
 		</Link>
 	)
 }

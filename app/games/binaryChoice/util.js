@@ -20,6 +20,6 @@ export const getCorrectAnswer = (numArr1,numArr2)=>{
     
     const sum1 = numArr1.reduce((sum,num)=>sum+num,0);
     const sum2 = numArr2.reduce((sum,num)=>sum+num,0);
-    const largerNumber = Math.max(sum1,sum2);
-    return largerNumber === sum1 ? 1 : 2;
+    const largerNumber = Math.max(sum1,sum2) === sum1 ? 1 : 2;
+    return {largerNumber,sum1,sum2};
 }
