@@ -20,7 +20,7 @@ const page = props => {
     const [start, setStart] = useState(false);
     const [selectedItem,setSelectedItem] = useState({
         id:0,
-        value:null
+        value:null,
     });
 
     const checkItemMatch = (id,number) => {
